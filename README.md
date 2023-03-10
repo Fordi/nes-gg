@@ -38,9 +38,9 @@ The way these codes are encoded is as follows:
 
 * First, here's the specification for the code, in nibbles.  The structure I'm using is:
 
-VarN <- Short name for the nibble; N is the position of the nibble in the var, so we can keep track  
-IIII <- Which var a bit belongs to (A = Address, D = Data, C = Compare)  
-\#### <- Bit number in the variable, in hex
+`VarN` <- Short name for the nibble; N is the position of the nibble in the var, so we can keep track  
+`IIII` <- Which var a bit belongs to (A = Address, D = Data, C = Compare)  
+`####` <- Bit number in the variable, in hex
 
 ```
 Adr3 Adr2 Adr1 Adr0

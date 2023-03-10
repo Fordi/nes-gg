@@ -8,7 +8,7 @@ export const decode = (code) => {
   const c = code.toUpperCase().replace(/\s+/g, '');
   const is6 = c.length === 6;
   if (!(c.length === 8 || is6) || /[^APZLGITYEOXUKSVN]/.test(c)) {
-    throw new Error('Entered code is not an NES Game Genie code');
+    throw new Error(`Entered code '${code}' is not an NES Game Genie code`);
   }
   const r = [...c]
     // Convert from letters to nibbles; the high bit of nibble 2 is ignored.
@@ -26,7 +26,7 @@ export const decode = (code) => {
     address: num(r, 2, 4, 1, 3),
     // Data is always the first and last nibble
     data: num(r, 0, r.length - 1),
-    ...(is6 && { compare: num(r, 6, 5) })
+    ...(!is6 && { compare: num(r, 6, 5) })
   };
 };
 
@@ -36,7 +36,7 @@ export const encode = ({ address, data, compare }) => {
   }
   const is6 = compare === undefined;
   // Convert our real values to an array of nibbles
-  let r = [...toNibs(address, 4), ...toNibs(data, 2), ...toNibs(compare, is6 ? 2 : 0)];
+  let r = [...toNibs(address, 4), ...toNibs(data, 2), ...toNibs(compare, is6 ? 0 : 2)];
   // rearrange into the GG order
   return [
        // Commented numbering is big-endian

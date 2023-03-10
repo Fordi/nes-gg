@@ -1,6 +1,6 @@
 {
   "name": "@fordi-org/nes-gg",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple functions to encode / decode NES Game Genie codes",
   "main": "index.js",
   "scripts": {},
@@ -8,5 +8,5 @@
   "license": "ISC",
   "types": "./index.d.ts",
   "type": "module",
-  "repository": "https://github.com/Fordi/gg-nes"
+  "repository": "https://github.com/Fordi/nes-gg"
 }

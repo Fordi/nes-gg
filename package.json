@@ -1,0 +1,11 @@
+{
+  "name": "@fordi-org/nes-gg",
+  "version": "1.0.0",
+  "description": "Simple functions to encode / decode NES Game Genie codes",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "types": "./index.d.ts",
+  "type": "module"
+}
